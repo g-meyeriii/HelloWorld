@@ -2,72 +2,130 @@
 
 namespace HelloWorld
 
-    //Constants are immutable balues with are known
-    //at compile time and do not change for the life of the program.
+  
 {
     class Program
     {
-        ////contants as fields
-
-        //const double PI = 3.14159265359;
-        //const int weeks = 52, months = 12;
-        //const string bday = "07.15.1977";
-
-
+        
         static void Main(string[] args)
         {
 
-            //Console.WriteLine("My birthday is always going to be: {0}", bday);
+            //Console.WriteLine(Calculate());
             //Console.Read();
 
-            //WriteSomething();
-            //WriteSomethingSpecific("I am an argument and am called from a method");
+            //Console.WriteLine("Please enter a number!");
+            //string userInput = Console.ReadLine();
+            //int num1 = 0;
+            //int num2 = 5;
+            //int result;
+            //try
+            //{
+            //    result = num2 / num1;
+            //}
+            //catch (DivideByZeroException)
+            //{
+            //    Console.WriteLine("Can't divide by zero");
+            //}
 
 
-            //Console.WriteLine(Add(15,14));
-            //Console.Read();
+            //try
+            //{
+            //    int userInputAsInt = int.Parse(userInput);
+            //}
+            //catch (FormatException)
+            //{
+            //    Console.WriteLine("Format exception, please enter a number.");
+            //}
+            //catch (OverflowException)
+            //{
+            //    Console.WriteLine("Too long or short Exception");
+            //}
+            //catch (ArgumentNullException)
+            //{
+            //    Console.WriteLine("Null must have a value");
+            //}
+            //finally
+            //{
+            //    Console.WriteLine("This is called anyways");
+            //}
+            int num1 = 5;
+            int num2 = 3;
+            int num3;
 
-            string friend1 = "Frank";
-            string friend2 = "Michael";
-            string friend3 = "Wlad";
+            //unary operatrors
+            num3 = -num1;
+            Console.WriteLine("num3 is {0}",num3);
 
+            bool isSunny = true;
+            Console.WriteLine("is it sunny? {0}", !isSunny);
 
-            GreetFriend(friend1);
-            GreetFriend(friend2);
-            GreetFriend(friend3);
-            Console.Read();
-        }
-        // access modifier (static) return type method name (parameter1, parameter2)
-        public static void WriteSomething()
+            //increment operators
+            int num = 0;
+            num ++ ;
+            Console.WriteLine("num is {0}", num);
+            Console.WriteLine("num is {0}", num++);
+            //pre increment 
+            Console.WriteLine("num is {0}", ++num);
 
-        {
-            Console.WriteLine("I am called from a method");
+            //decrement operator
          
-        }
+            num--;
+            Console.WriteLine("num is {0}", num);
+            Console.WriteLine("num is {0}", num--);
+            //pre decrement 
+            Console.WriteLine("num is {0}", --num);
 
-        public static void WriteSomethingSpecific(string myText)
-        {
-            Console.WriteLine(myText);
-            Console.Read();        
-        }
+            int result;
+            
+            result = num1 + num2;
+            Console.WriteLine("Result of num1 + num2 is {0}", result);
+            result = num1 - num2;
+            Console.WriteLine("Result of num1 - num2 is {0}", result);
+            result = num1 * num2;
+            Console.WriteLine("Result of num1 * num2 is {0}", result);
+            result = num1 / num2;
+            Console.WriteLine("Result of num1 / num2 is {0}", result);
+            //modulus
+            result = num1 % num2;
+            Console.WriteLine("Result of num1 % num2 is {0}", result);
 
-        public static int Add(int num1, int num2)
-        {
-            return num1 + num2;
+            // relational and type operators
+            bool isLower;
+            isLower = num1 > num2;
+            Console.WriteLine("Result of num1 > num2 is {0}", isLower);
+
+            //equality operators
+            bool isEqual = num1 == num2;
+            Console.WriteLine("Result of num1 == num2 is {0}", isEqual);
+            
+
+            isEqual = num1 != num2;
+            Console.WriteLine("Result of num1 != num2 is {0}", isEqual);
+
+            //Conditional operators && Both have to be true for 'True' result
+            bool isLowerAndSunny = isLower && isSunny;
+            Console.WriteLine("Result of isLower and IsSunny is {0}", isLowerAndSunny);
+
+            //Only one needs to be true to return 'True' result
+            isLowerAndSunny = isLower || isSunny;
+            Console.WriteLine("Result of isLower or IsSunny is {0}", isLowerAndSunny);
+
+            Console.ReadKey();
 
         }
-        public static int Multiply(int num1, int num2)
-        {
+        //public static int Calculate()
+        //{
+        //    Console.WriteLine("Please enter the first number");
+        //    string number1Input = Console.ReadLine();
+        //    Console.WriteLine("Please enter the second number");
+        //    string number2Input = Console.ReadLine();
 
-            return num1 * num2;
-        }
-        public static double Divide(double num1, double num2)
-        {
-            return num1 / num2;
-        }
-        public static void GreetFriend(string friend)
-        {
-            Console.WriteLine("Hi "+  friend + " , my friend");
-        }
+        //    int num1 = int.Parse(number1Input);
+        //    int num2 = int.Parse(number2Input);
+
+        //    int result = num1 + num2;
+        //        return result;
+        //}
+         
     }
 }
