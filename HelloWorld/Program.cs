@@ -1,57 +1,23 @@
 ﻿using System;
 
-namespace HelloWorld
+namespace ConstansC
+
+    //Constants are immutable balues with are known
+    //at compile time and do not change for the life of the program.
 {
     class Program
     {
+        //contants as fields
+
+        const double PI = 3.14159265359;
+        const int weeks = 52, months = 12;
+        const string bday = "07.15.1977";
+
+
         static void Main(string[] args)
         {
-            //string myname = "George";
-
-            //string message = "My name is " + myname;
-
-            //string capsmessage = message.ToUpper();
-
-            //string lowermessage = message.ToLower();
-
-
-            //Console.WriteLine(lowermessage);
-
-            //Console.Read();
-
-            // implicit conversion
-            //int num = 1290532;
-            //long bignum = num;
-
-            //Console.WriteLine(bignum);
-            //Console.Read();
-
-            //float myFloat = 13.37f;
-            //double myNewDouble = myFloat;
-
-            //double myDouble = 13.37;
-            //int myInt;
-
-            //// explicit conversion
-            //// cast double to int;
-            //myInt = (int)myDouble;
-
-            //// typeconversion
-            //string myString = myDouble.ToString(); // "13.37"
-            //string myFloatString = myFloat.ToString();
-
-            //bool sunIsShining = true;
-
-            //string myBoolString =sunIsShining.ToString();
-
-            //string myString = "15";
-            //string mySecondString = "13";
-            //int num1 = Int32.Parse(myString);
-            //int num2 = Int32.Parse(mySecondString);
-            //int resultInt = num1 + num2;
-            //string result = myString + mySecondString;
-
-            Console.WriteLine();
+            
+            Console.WriteLine("My birthday is always going to be: {0}", bday);
             Console.Read();
         }
 
