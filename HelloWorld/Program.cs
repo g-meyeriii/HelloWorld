@@ -6,64 +6,42 @@ namespace HelloWorld
 {
     class Program
     {
-        
+        static string username;
+        static string password;
+
         static void Main(string[] args)
         {
-
-            bool isAdmin = false;
-            bool isResgiterd = true;
-            string userName = "";
-
-            Console.WriteLine("Input username");
-            userName = Console.ReadLine();
-
-            if (isResgiterd && userName !="" && userName.Equals("admin"))
-            {
-                    Console.WriteLine("Hello registerded user!");
-               
-                    Console.WriteLine("Hello there," + userName + ", a registerded user!");
-                    
-                    Console.WriteLine("Hello Admin");
-                
-            }
-            if(isAdmin || isResgiterd)
-            {
-                Console.WriteLine("You are logged in");
-            }
+            Register();
+            Login();
             Console.Read();
-
-            //Console.WriteLine("What's the temperature in *F");
-            //string temperature = Console.ReadLine();
-            //int numTemp;
-            //int number;
-            //bool userEnteredANumber = int.TryParse(temperature, out number);
-
-            //if (userEnteredANumber)
-            //{
-            //    numTemp = number;
-            //}
-            //else
-            //{
-            //    numTemp = 0;
-            //    Console.WriteLine("Must be a number entered temp set @ 0");
-            //}
-
-
-            //if(numTemp < 50)
-            //{
-            //    Console.WriteLine("Take your coat");
-            //}
-            //else if(numTemp >=50 && numTemp <=69)
-            //{
-            //    Console.WriteLine("It is a pants day");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Shorst weather!");
-            //}
-            //Console.Read();
         }
-       
-         
+        static void Register()
+        {
+            Console.WriteLine("Please enter username.");
+            username = Console.ReadLine();
+            Console.WriteLine("Please enter password");
+            password = Console.ReadLine();
+            Console.WriteLine("Registration complete!");
+        }
+        static void Login()
+        {
+            Console.WriteLine("Please enter username.");
+            if (username == Console.ReadLine())
+            {
+                Console.WriteLine("Please enter password");
+                if (password == Console.ReadLine())
+                {
+                    Console.WriteLine("Login complete!"); ;
+                }
+                else
+                {
+                    Console.WriteLine("Login failed, (password) restart program");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Login failed, (username) restart program");
+            }
+        }
     }
 }
