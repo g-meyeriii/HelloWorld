@@ -2,51 +2,61 @@
 
 namespace HelloWorld
 
-  
+
 {
     class Program
     {
 
         static void Main(string[] args)
         {
-            int idx = 0;
-            string enteredText = "";
-            while (enteredText.Equals(""))
+            string input = "0";
+            int count = 0;
+            int sum = 0;
+            int currentNumber = 0;
+
+            while (input != "-1")
             {
-                
-                Console.WriteLine("Please press enter to continue, any other characters and enter to finish");
-                Console.WriteLine("Current people count is {0}", idx);
-                enteredText=Console.ReadLine();
-                idx++;
+                Console.WriteLine("The current number is {0}", currentNumber);
+                Console.WriteLine("Please enter a grade");
+                Console.WriteLine("Current amount of entries {0}", count);
+                Console.WriteLine("-1 and enter to get the average");
+
+                input = Console.ReadLine();
+                if (input == "-1")
+                {
+                    Console.WriteLine("-----------------------------------------------");
+                    double average = (double)sum / (double)count;
+                    Console.WriteLine("The average for this student is {0}", average);
+                }
+                if (int.TryParse(input, out currentNumber) && currentNumber > 0 && currentNumber < 21)
+                {
+                    sum = sum + currentNumber;
+                }
+                else
+                {
+                    if (!(input.Equals("-1")))
+                    {
+                        Console.WriteLine("Please enter a value between 0-20");
+                    }
+                    continue;
+                }
+                count++;
+
             }
-
-            //do while loops
-            //int counter = 0;
-            //int lengthOfText = 0;
-            //string wholeText = "";
-            //do
-            //{
-            //    Console.WriteLine("Please enter the naem of a friend");
-            //    string nameOfFriend = Console.ReadLine();
-            //    int currentLength = nameOfFriend.Length;
-            //    lengthOfText += currentLength;
-            //    wholeText += nameOfFriend;
-            //    Console.WriteLine(counter);
-
-            //} while (lengthOfText < 20);
-            //Console.WriteLine("Thanks, that was enough!" + wholeText);
-            //for (int idx = 1; idx < 20; idx+=2)
-            //{
-
-            //    Console.WriteLine(idx);
-
-            //}
-            Console.WriteLine("Process complete");
             Console.Read();
         }
-      
-       
-        
-       
+
+        //for (int counter = 0; counter < 10; counter++)
+        //{
+        //    if (counter % 2 ==0)
+        //    {
+        //        Console.WriteLine("Even");
+        //        continue;
+
+        //    }
+        //    Console.WriteLine(counter);
+        //}
+        //Console.Read();
+     
     }
 }
