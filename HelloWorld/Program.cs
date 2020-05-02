@@ -6,37 +6,46 @@ namespace HelloWorld
 {
     class Program
     {
-         //condition ? first_expression : second_expression;
-         //condition has to be either true or false
-         //The conditional operator is right - associative;
-         //The expressiong a ? b : (c ? d : e),
-         //not as (a ? b :c)? d : e.
-         //The conditional operator can't be overloaded.
 
         static void Main(string[] args)
         {
-            int temperature = -5;
-            string stateOfMatter;
+            int idx = 0;
+            string enteredText = "";
+            while (enteredText.Equals(""))
+            {
+                
+                Console.WriteLine("Please press enter to continue, any other characters and enter to finish");
+                Console.WriteLine("Current people count is {0}", idx);
+                enteredText=Console.ReadLine();
+                idx++;
+            }
 
-            if (temperature < 32)
-                stateOfMatter = "solid";
-            else
-                stateOfMatter = "liquid";
-            Console.WriteLine("State of matter is {0}", stateOfMatter);
-            temperature += 40;
+            //do while loops
+            //int counter = 0;
+            //int lengthOfText = 0;
+            //string wholeText = "";
+            //do
+            //{
+            //    Console.WriteLine("Please enter the naem of a friend");
+            //    string nameOfFriend = Console.ReadLine();
+            //    int currentLength = nameOfFriend.Length;
+            //    lengthOfText += currentLength;
+            //    wholeText += nameOfFriend;
+            //    Console.WriteLine(counter);
 
-            // ternary operator short version of above
-            stateOfMatter = temperature < 32 ? "solid" : "liquid";
-            Console.WriteLine("State of matter is {0}", stateOfMatter);
+            //} while (lengthOfText < 20);
+            //Console.WriteLine("Thanks, that was enough!" + wholeText);
+            //for (int idx = 1; idx < 20; idx+=2)
+            //{
 
-            temperature += 200;
+            //    Console.WriteLine(idx);
 
-            // gas state of water
-            stateOfMatter = temperature > 212 ? "steam/gas" : temperature < 32 ? "solid" : "liquid";
-            Console.WriteLine("State of matter is {0}", stateOfMatter);
+            //}
+            Console.WriteLine("Process complete");
             Console.Read();
-            
         }
+      
+       
         
        
     }
