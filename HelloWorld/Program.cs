@@ -9,54 +9,41 @@ namespace HelloWorld
 
         static void Main(string[] args)
         {
-            string input = "0";
-            int count = 0;
-            int sum = 0;
-            int currentNumber = 0;
 
-            while (input != "-1")
-            {
-                Console.WriteLine("The current number is {0}", currentNumber);
-                Console.WriteLine("Please enter a grade");
-                Console.WriteLine("Current amount of entries {0}", count);
-                Console.WriteLine("-1 and enter to get the average");
+            //Human greg = new Human("Greg");
+            //greg.IntroduceMyself();
 
-                input = Console.ReadLine();
-                if (input == "-1")
-                {
-                    Console.WriteLine("-----------------------------------------------");
-                    double average = (double)sum / (double)count;
-                    Console.WriteLine("The average for this student is {0}", average);
-                }
-                if (int.TryParse(input, out currentNumber) && currentNumber > 0 && currentNumber < 21)
-                {
-                    sum = sum + currentNumber;
-                }
-                else
-                {
-                    if (!(input.Equals("-1")))
-                    {
-                        Console.WriteLine("Please enter a value between 0-20");
-                    }
-                    continue;
-                }
-                count++;
+            //Human jason = new Human("Jason", "Yoho") ;
+            //jason.IntroduceMyself();
 
-            }
+            //Human leela = new Human("Leela", "Meyer", "Brown");
+            //leela.IntroduceMyself();
+
+            //Human maria = new Human("Maria", "Meyer", "Green", 29);
+            //maria.IntroduceMyself();
+
+            //Human basicHuman = new Human();
+            //basicHuman.IntroduceMyself();
+
+            //Box box = new Box(3,4,5);
+
+
+
+            //Console.WriteLine("Box width is " + box.Width);
+            //box.Width = 10;
+            //Console.WriteLine("Box width is " + box.Width);
+
+            //Console.WriteLine("Box volume is " + box.Volume);
+
+            //Console.WriteLine("Box area is " + box.Area);
+            //box.DisplayInfo();
+
+            Members member1 = new Members();
+            member1.Introducing(true);
+
+
             Console.Read();
-        }
-
-        //for (int counter = 0; counter < 10; counter++)
-        //{
-        //    if (counter % 2 ==0)
-        //    {
-        //        Console.WriteLine("Even");
-        //        continue;
-
-        //    }
-        //    Console.WriteLine(counter);
-        //}
-        //Console.Read();
-     
+        }    
+        
     }
 }
